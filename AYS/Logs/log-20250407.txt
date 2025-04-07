@@ -1,0 +1,94 @@
+2025-04-07 17:19:48.226 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-07 17:19:48.268 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-07 17:19:48.269 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-07 17:19:48.269 +03:00 [INF] Hosting environment: Development
+2025-04-07 17:19:48.269 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-07 17:21:17.660 +03:00 [INF] Application is shutting down...
+2025-04-07 17:21:40.046 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-07 17:21:40.089 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-07 17:21:40.090 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-07 17:21:40.090 +03:00 [INF] Hosting environment: Development
+2025-04-07 17:21:40.090 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-07 17:21:52.999 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-07 17:21:53.010 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-07 17:21:53.043 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:21:53.076 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-07 17:21:53.085 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-07 17:21:53.216 +03:00 [INF] Executed ViewResult - view Index executed in 134.1818ms.
+2025-04-07 17:21:53.218 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 141.9557ms
+2025-04-07 17:21:53.218 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:21:53.219 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 220.8737ms
+2025-04-07 17:21:53.658 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-04-07 17:21:53.658 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-04-07 17:21:53.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-04-07 17:21:53.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-04-07 17:21:53.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/jquery/dist/jquery.min.js - null null
+2025-04-07 17:21:53.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/AYS.styles.css?v=F_TAE-HEz4aZ_iUZXuyDOyN8mjMA7kLXdTLxVWthp_w - null null
+2025-04-07 17:21:53.671 +03:00 [INF] Sending file. Request path: '/AYS.styles.css'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/obj/Debug/net8.0/scopedcss/bundle/AYS.styles.css'
+2025-04-07 17:21:53.671 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/css/site.css'
+2025-04-07 17:21:53.672 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/js/site.js'
+2025-04-07 17:21:53.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/AYS.styles.css?v=F_TAE-HEz4aZ_iUZXuyDOyN8mjMA7kLXdTLxVWthp_w - 200 1072 text/css 13.3027ms
+2025-04-07 17:21:53.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 200 362 text/css 13.4468ms
+2025-04-07 17:21:53.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 14.277ms
+2025-04-07 17:21:53.677 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-04-07 17:21:53.677 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-04-07 17:21:53.677 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-04-07 17:21:53.678 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 20.7904ms
+2025-04-07 17:21:53.679 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 20.8522ms
+2025-04-07 17:21:53.679 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 20.8539ms
+2025-04-07 17:21:53.954 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/favicon.ico - null null
+2025-04-07 17:21:53.956 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/favicon.ico'
+2025-04-07 17:21:53.956 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/favicon.ico - 200 5430 image/x-icon 2.0869ms
+2025-04-07 17:22:08.044 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Home/Privacy - null null
+2025-04-07 17:22:08.055 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Privacy (AYS)'
+2025-04-07 17:22:08.060 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Privacy() on controller AYS.Controllers.HomeController (AYS).
+2025-04-07 17:22:08.062 +03:00 [INF] Executing ViewResult, running view Privacy.
+2025-04-07 17:22:08.065 +03:00 [INF] Executed ViewResult - view Privacy executed in 4.1635ms.
+2025-04-07 17:22:08.065 +03:00 [INF] Executed action AYS.Controllers.HomeController.Privacy (AYS) in 5.2991ms
+2025-04-07 17:22:08.065 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Privacy (AYS)'
+2025-04-07 17:22:08.065 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Home/Privacy - 200 null text/html; charset=utf-8 21.2691ms
+2025-04-07 17:22:08.890 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-07 17:22:08.891 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:22:08.892 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-07 17:22:08.893 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-07 17:22:08.894 +03:00 [INF] Executed ViewResult - view Index executed in 1.7642ms.
+2025-04-07 17:22:08.895 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 2.3411ms
+2025-04-07 17:22:08.895 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:22:08.895 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 4.818ms
+2025-04-07 17:22:14.436 +03:00 [INF] Application is shutting down...
+2025-04-07 17:30:11.867 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-07 17:30:11.907 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-07 17:30:11.907 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-07 17:30:11.907 +03:00 [INF] Hosting environment: Development
+2025-04-07 17:30:11.908 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-07 17:30:13.991 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-07 17:30:13.996 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-07 17:30:14.005 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:30:14.050 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-07 17:30:14.060 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-07 17:30:14.154 +03:00 [INF] Executed ViewResult - view Index executed in 95.749ms.
+2025-04-07 17:30:14.156 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 104.8982ms
+2025-04-07 17:30:14.156 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-07 17:30:14.157 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 166.777ms
+2025-04-07 17:30:14.555 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-04-07 17:30:14.555 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-04-07 17:30:14.555 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/jquery/dist/jquery.min.js - null null
+2025-04-07 17:30:14.556 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-04-07 17:30:14.556 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-04-07 17:30:14.556 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/AYS.styles.css?v=F_TAE-HEz4aZ_iUZXuyDOyN8mjMA7kLXdTLxVWthp_w - null null
+2025-04-07 17:30:14.560 +03:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-04-07 17:30:14.560 +03:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-04-07 17:30:14.560 +03:00 [INF] The file /js/site.js was not modified
+2025-04-07 17:30:14.560 +03:00 [INF] The file /css/site.css was not modified
+2025-04-07 17:30:14.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 4.4486ms
+2025-04-07 17:30:14.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 5.0961ms
+2025-04-07 17:30:14.560 +03:00 [INF] The file /AYS.styles.css was not modified
+2025-04-07 17:30:14.562 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/jquery/dist/jquery.min.js - 304 null text/javascript 6.5312ms
+2025-04-07 17:30:14.561 +03:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-04-07 17:30:14.561 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 5.1178ms
+2025-04-07 17:30:14.562 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/AYS.styles.css?v=F_TAE-HEz4aZ_iUZXuyDOyN8mjMA7kLXdTLxVWthp_w - 304 null text/css 6.4315ms
+2025-04-07 17:30:14.564 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 8.6655ms
+2025-04-07 17:30:14.842 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/favicon.ico - null null
+2025-04-07 17:30:14.843 +03:00 [INF] The file /favicon.ico was not modified
+2025-04-07 17:30:14.843 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/favicon.ico - 304 null image/x-icon 1.163ms
+2025-04-07 17:30:17.818 +03:00 [INF] Application is shutting down...
