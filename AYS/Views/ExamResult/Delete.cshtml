@@ -1,0 +1,56 @@
+@model AYS.Entities.ExamResult
+
+@{
+    ViewData["Title"] = "Sınav Sonucunu Sil";
+}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0">@ViewData["Title"]</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> 
+                        <strong>Uyarı:</strong> Bu sınav sonucunu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Sınav Sonucu Bilgileri:</h6>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-4">Ders:</dt>
+                            <dd class="col-sm-8">@Model.Exam.Course.Name</dd>
+                            
+                            <dt class="col-sm-4">Sınav:</dt>
+                            <dd class="col-sm-8">@Model.Exam.Title</dd>
+                            
+                            <dt class="col-sm-4">Öğrenci:</dt>
+                            <dd class="col-sm-8">@Model.Student.FirstName @Model.Student.LastName</dd>
+                            
+                            <dt class="col-sm-4">Puan:</dt>
+                            <dd class="col-sm-8">@Model.Score / @Model.Exam.TotalPoints</dd>
+                            
+                            <dt class="col-sm-4">Yorum:</dt>
+                            <dd class="col-sm-8">@(string.IsNullOrEmpty(Model.Feedback) ? "-" : Model.Feedback)</dd>
+                        </dl>
+                    </div>
+                    
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-controller="Exam" asp-action="Details" asp-route-id="@Model.ExamId" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Vazgeç
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Sonucu Sil
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

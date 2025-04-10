@@ -1,54 +1,162 @@
-﻿@{
+﻿@model AYS.Models.ViewModels.DashboardViewModel
+
+@{
     ViewData["Title"] = "Anasayfa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Akademi Yönetim Sistemine Hoş Geldiniz</h1>
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Öğrenciler</h5>
-                </div>
+<div class="container-fluid p-4">
+    <h1 class="display-4 mb-4">Akademi Yönetim Sistemine Hoş Geldiniz</h1>
+    
+    <!-- İstatistik Kartları -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
                 <div class="card-body">
-                    <p>Öğrenci olarak sisteme kaydolabilir, derslere katılabilir ve sınavları takip edebilirsiniz.</p>
-                    <a href="#" class="btn btn-outline-primary">Daha Fazla Bilgi</a>
+                    <h5 class="card-title">Toplam Ders</h5>
+                    <p class="card-text display-4">@Model.TotalCourses</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Eğitmenler</h5>
-                </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
                 <div class="card-body">
-                    <p>Eğitmen olarak ders oluşturabilir, sınav hazırlayabilir ve öğrenci performanslarını takip edebilirsiniz.</p>
-                    <a href="#" class="btn btn-outline-success">Daha Fazla Bilgi</a>
+                    <h5 class="card-title">Toplam Sınav</h5>
+                    <p class="card-text display-4">@Model.TotalExams</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0">Yöneticiler</h5>
-                </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
                 <div class="card-body">
-                    <p>Yönetici olarak tüm sistem işlemlerini kontrol edebilir, kullanıcıları ve dersleri yönetebilirsiniz.</p>
-                    <a href="#" class="btn btn-outline-info">Daha Fazla Bilgi</a>
+                    <h5 class="card-title">Toplam Öğrenci</h5>
+                    <p class="card-text display-4">@Model.TotalStudents</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Toplam Eğitmen</h5>
+                    <p class="card-text display-4">@Model.TotalEducators</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header bg-warning">
+    
+    <div class="row">
+        <!-- Yaklaşan Sınavlar -->
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Yaklaşan Sınavlar</h5>
+                </div>
+                <div class="card-body">
+                    @if (!Model.UpcomingExams.Any())
+                    {
+                        <div class="alert alert-info">
+                            Yaklaşan sınav bulunmamaktadır.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="list-group">
+                            @foreach (var exam in Model.UpcomingExams)
+                            {
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@exam.Title</h5>
+                                        <small>@exam.ExamDate.ToString("dd.MM.yyyy HH:mm")</small>
+                                    </div>
+                                    <p class="mb-1">@exam.Course.Name</p>
+                                    <div class="d-flex justify-content-between">
+                                        <small>@exam.ExamType</small>
+                                        <small>Süre: @exam.Duration dakika</small>
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Exam" asp-action="Index" class="btn btn-primary btn-sm">Tüm Sınavlar</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Son Duyurular -->
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-warning text-dark">
                     <h5 class="mb-0">Son Duyurular</h5>
                 </div>
                 <div class="card-body">
-                    <p>Henüz duyuru bulunmamaktadır.</p>
+                    @if (!Model.RecentAnnouncements.Any())
+                    {
+                        <div class="alert alert-info">
+                            Henüz duyuru bulunmamaktadır.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="list-group">
+                            @foreach (var announcement in Model.RecentAnnouncements)
+                            {
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">@announcement.Title</h5>
+                                        <small>@announcement.CreatedAt.ToString("dd.MM.yyyy")</small>
+                                    </div>
+                                    <p class="mb-1">@announcement.Course.Name</p>
+                                    <small>@announcement.Author.FirstName @announcement.Author.LastName</small>
+                                </a>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Announcement" asp-action="Index" class="btn btn-warning btn-sm">Tüm Duyurular</a>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Rol Bilgi Kartları (Oturum açmayan kullanıcılar için) -->
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Öğrenciler</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Öğrenci olarak sisteme kaydolabilir, derslere katılabilir ve sınavları takip edebilirsiniz.</p>
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-outline-primary">Kaydol</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Eğitmenler</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Eğitmen olarak ders oluşturabilir, sınav hazırlayabilir ve öğrenci performanslarını takip edebilirsiniz.</p>
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-outline-success">Kaydol</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Yöneticiler</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Yönetici olarak tüm sistem işlemlerini kontrol edebilir, kullanıcıları ve dersleri yönetebilirsiniz.</p>
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-outline-info">Kaydol</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div> 

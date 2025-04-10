@@ -6,7 +6,7 @@ public class ExamResult : BaseEntity
     public string StudentId { get; set; }
     public int StudentCourseId { get; set; }
     public decimal Score { get; set; }
-    public string? Comments { get; set; }
+    public string? Feedback { get; set; }
     public DateTime SubmissionDate { get; set; }
     public bool IsGraded { get; set; }
     

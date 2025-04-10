@@ -1,0 +1,78 @@
+@model AYS.Models.ViewModels.ExamResultViewModel
+
+@{
+    ViewData["Title"] = "Sınav Sonucunu Düzenle";
+}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">@ViewData["Title"]</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Sınav Bilgileri</h6>
+                                    <p><strong>Ders:</strong> @Model.Exam.Course.Name</p>
+                                    <p><strong>Sınav:</strong> @Model.Exam.Title</p>
+                                    <p><strong>Tarih:</strong> @Model.Exam.ExamDate.ToString("dd.MM.yyyy HH:mm")</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bold">Öğrenci Bilgileri</h6>
+                                    <p><strong>Ad Soyad:</strong> @Model.Student.FirstName @Model.Student.LastName</p>
+                                    <p><strong>E-posta:</strong> @Model.Student.Email</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ExamId" />
+                        <input type="hidden" asp-for="StudentId" />
+                        <input type="hidden" asp-for="StudentCourseId" />
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Score" class="form-label">Puan</label>
+                                <input asp-for="Score" class="form-control" type="number" min="0" max="100" step="0.01" />
+                                <span asp-validation-for="Score" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Feedback" class="form-label">Yorum</label>
+                                <textarea asp-for="Feedback" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Feedback" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a asp-controller="Exam" asp-action="Details" asp-route-id="@Model.ExamId" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Geri
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

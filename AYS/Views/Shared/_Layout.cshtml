@@ -22,7 +22,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                                <i class="bi bi-house"></i> Anasayfa
+                                <i class="bi bi-house"></i> Ana Sayfa
                             </a>
                         </li>
                         <li class="nav-item">
@@ -30,67 +30,50 @@
                                 <i class="bi bi-book"></i> Kurslar
                             </a>
                         </li>
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-gear"></i> Yönetim
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Category" asp-action="Index">
-                                            <i class="bi bi-tags"></i> Kategoriler
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Semester" asp-action="Index">
-                                            <i class="bi bi-calendar3"></i> Dönemler
-                                        </a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="UserManagement" asp-action="Index">
-                                            <i class="bi bi-people"></i> Kullanıcı Yönetimi
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        }
-                        @if (User.IsInRole("Educator"))
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="educatorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-mortarboard"></i> Eğitmen
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="educatorDropdown">
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Exam" asp-action="Index">
-                                            <i class="bi bi-card-checklist"></i> Sınavlar
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Announcement" asp-action="Index">
-                                            <i class="bi bi-megaphone"></i> Duyurular
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        }
-                        @if (User.IsInRole("Student"))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="StudentCourse" asp-action="Index">
-                                    <i class="bi bi-journal-check"></i> Derslerim
-                                </a>
-                            </li>
-                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Exam" asp-action="Index">
+                                <i class="bi bi-card-checklist"></i> Sınavlar
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
                                 <i class="bi bi-shield-check"></i> Gizlilik
                             </a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> Merhaba, @User.Identity.Name!
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <!-- Hesabım sayfası henüz olmadığı için kaldırıldı -->
+                                    <li>
+                                        <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bi bi-box-arrow-right"></i> Çıkış Yap
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">
+                                    <i class="bi bi-person-plus"></i> Kaydol
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">
+                                    <i class="bi bi-box-arrow-in-right"></i> Giriş Yap
+                                </a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -103,7 +86,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - Akademi Yönetim Sistemi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
+            &copy; @DateTime.Now.Year - Akademi Yönetim Sistemi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

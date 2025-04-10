@@ -1,0 +1,104 @@
+@model AYS.Entities.Exam
+
+@{
+    ViewData["Title"] = "Sınavı Düzenle";
+}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">@ViewData["Title"] - @Model.Title</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <input type="hidden" asp-for="Id" />
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="CourseId" class="form-label">Ders</label>
+                                <select asp-for="CourseId" asp-items="ViewBag.CourseId" class="form-select">
+                                    <option value="">-- Ders Seçin --</option>
+                                </select>
+                                <span asp-validation-for="CourseId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Title" class="form-label">Sınav Başlığı</label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Description" class="form-label">Açıklama</label>
+                                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="ExamType" class="form-label">Sınav Tipi</label>
+                                <select asp-for="ExamType" class="form-select">
+                                    <option value="Vize">Vize</option>
+                                    <option value="Final">Final</option>
+                                    <option value="Quiz">Quiz</option>
+                                    <option value="Ödev">Ödev</option>
+                                    <option value="Proje">Proje</option>
+                                </select>
+                                <span asp-validation-for="ExamType" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="TotalPoints" class="form-label">Toplam Puan</label>
+                                <input asp-for="TotalPoints" class="form-control" />
+                                <span asp-validation-for="TotalPoints" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="ExamDate" class="form-label">Sınav Tarihi</label>
+                                <input asp-for="ExamDate" class="form-control" type="datetime-local" />
+                                <span asp-validation-for="ExamDate" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Duration" class="form-label">Süre (dakika)</label>
+                                <input asp-for="Duration" class="form-control" />
+                                <span asp-validation-for="Duration" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="form-check form-switch">
+                                    <input asp-for="IsPublished" class="form-check-input" type="checkbox" />
+                                    <label asp-for="IsPublished" class="form-check-label">Yayında</label>
+                                </div>
+                                <span asp-validation-for="IsPublished" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Geri
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

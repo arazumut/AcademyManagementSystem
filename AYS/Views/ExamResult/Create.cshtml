@@ -1,0 +1,95 @@
+@model AYS.Models.ViewModels.ExamResultViewModel
+
+@{
+    ViewData["Title"] = "Sınav Sonucu Ekle";
+}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">@ViewData["Title"] - @ViewData["ExamName"]</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info mb-4">
+                        <i class="fas fa-info-circle"></i> 
+                        <strong>Ders:</strong> @ViewData["CourseName"]
+                    </div>
+                    
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        
+                        <input type="hidden" asp-for="ExamId" />
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="StudentId" class="form-label">Öğrenci</label>
+                                <select asp-for="StudentId" asp-items="ViewBag.StudentId" class="form-select">
+                                    <option value="">-- Öğrenci Seçin --</option>
+                                </select>
+                                <span asp-validation-for="StudentId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="StudentCourseId" class="form-label">Öğrenci Ders Kaydı</label>
+                                <select asp-for="StudentCourseId" asp-items="ViewBag.StudentCourseId" class="form-select">
+                                    <option value="">-- Kayıt Seçin --</option>
+                                </select>
+                                <span asp-validation-for="StudentCourseId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Score" class="form-label">Puan</label>
+                                <input asp-for="Score" class="form-control" type="number" min="0" max="100" step="0.01" />
+                                <span asp-validation-for="Score" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label asp-for="Feedback" class="form-label">Yorum</label>
+                                <textarea asp-for="Feedback" class="form-control" rows="3" placeholder="Öğrenci için ek değerlendirme yorumu..."></textarea>
+                                <span asp-validation-for="Feedback" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a asp-controller="Exam" asp-action="Details" asp-route-id="@Model.ExamId" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Geri
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Öğrenci seçimine göre ders kaydını otomatik seçme
+        $(function() {
+            $('#StudentId').change(function() {
+                var selectedStudent = $(this).val();
+                
+                $('#StudentCourseId option').each(function() {
+                    var optionText = $(this).text();
+                    if (optionText.indexOf(selectedStudent) >= 0) {
+                        $('#StudentCourseId').val($(this).val());
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+} 

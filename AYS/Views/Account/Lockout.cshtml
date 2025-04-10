@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Hesap Kilitlendi";
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-warning text-dark">
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-lock-fill text-warning" style="font-size: 4rem;"></i>
+                    <h2 class="mt-3">Hesabınız Kilitlendi</h2>
+                    <p class="lead">Çok sayıda başarısız giriş denemesi nedeniyle hesabınız geçici olarak kilitlenmiştir.</p>
+                    <p>Lütfen daha sonra tekrar deneyin veya yönetici ile iletişime geçin.</p>
+                    <hr />
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Ana Sayfaya Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

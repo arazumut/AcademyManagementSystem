@@ -1,0 +1,130 @@
+@model AYS.Entities.Exam
+
+@{
+    ViewData["Title"] = "Sınav Detayları";
+}
+
+<div class="container-fluid p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>@Model.Title</h1>
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Geri
+            </a>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                <i class="fas fa-edit"></i> Düzenle
+            </a>
+            @if (!Model.IsPublished)
+            {
+                <form asp-action="Publish" asp-route-id="@Model.Id" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check-circle"></i> Yayınla
+                    </button>
+                </form>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title mb-0">Sınav Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Ders:</h6>
+                            <p>@Model.Course.Name</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Eğitmen:</h6>
+                            <p>@Model.Instructor.FirstName @Model.Instructor.LastName</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Sınav Tipi:</h6>
+                            <p>@Model.ExamType</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Toplam Puan:</h6>
+                            <p>@Model.TotalPoints</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Sınav Tarihi:</h6>
+                            <p>@Model.ExamDate.ToString("dd.MM.yyyy HH:mm")</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Süre:</h6>
+                            <p>@Model.Duration dakika</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Durum:</h6>
+                            <p>
+                                @if (Model.IsPublished)
+                                {
+                                    <span class="badge bg-success">Yayında</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning text-dark">Taslak</span>
+                                }
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="fw-bold">Oluşturulma Tarihi:</h6>
+                            <p>@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <h6 class="fw-bold">Açıklama:</h6>
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Sınav Sonuçları</h5>
+                </div>
+                <div class="card-body">
+                    @if (!Model.Results.Any())
+                    {
+                        <div class="alert alert-info">
+                            Bu sınava ait sonuç bulunmamaktadır.
+                        </div>
+                    }
+                    else
+                    {
+                        <ul class="list-group">
+                            @foreach (var result in Model.Results)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-0">@result.Student.FirstName @result.Student.LastName</h6>
+                                        <small class="text-muted">@result.Student.Email</small>
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">@result.Score / @Model.TotalPoints</span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,65 @@
+@model AYS.Entities.Exam
+
+@{
+    ViewData["Title"] = "Sınavı Sil";
+}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0">@ViewData["Title"]</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> 
+                        <strong>Uyarı:</strong> Bu sınavı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-bold">Sınav Bilgileri:</h6>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-4">Başlık:</dt>
+                            <dd class="col-sm-8">@Model.Title</dd>
+                            
+                            <dt class="col-sm-4">Ders:</dt>
+                            <dd class="col-sm-8">@Model.Course.Name</dd>
+                            
+                            <dt class="col-sm-4">Sınav Tipi:</dt>
+                            <dd class="col-sm-8">@Model.ExamType</dd>
+                            
+                            <dt class="col-sm-4">Sınav Tarihi:</dt>
+                            <dd class="col-sm-8">@Model.ExamDate.ToString("dd.MM.yyyy HH:mm")</dd>
+                            
+                            <dt class="col-sm-4">Durum:</dt>
+                            <dd class="col-sm-8">
+                                @if (Model.IsPublished)
+                                {
+                                    <span class="badge bg-success">Yayında</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-warning text-dark">Taslak</span>
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                    
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="d-flex justify-content-end gap-2">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Vazgeç
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Sınavı Sil
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
