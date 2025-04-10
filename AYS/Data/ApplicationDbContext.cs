@@ -1,4 +1,4 @@
-using AYS.Models.Entities;
+using AYS.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,6 +53,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
                 .WithMany(c => c.EnrolledStudents)
                 .HasForeignKey(sc => sc.CourseId)
                 .OnDelete(DeleteBehavior.Cascade);
+                
+            entity.Property(sc => sc.FinalGrade)
+                .HasPrecision(5, 2);
         });
 
         builder.Entity<Exam>(entity =>
@@ -66,6 +69,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
                 .WithMany(i => i.CreatedExams)
                 .HasForeignKey(e => e.InstructorId)
                 .OnDelete(DeleteBehavior.Restrict);
+                
+            entity.Property(e => e.TotalPoints)
+                .HasPrecision(5, 2);
         });
 
         builder.Entity<ExamResult>(entity =>
@@ -73,17 +79,20 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             entity.HasOne(er => er.Exam)
                 .WithMany(e => e.Results)
                 .HasForeignKey(er => er.ExamId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasOne(er => er.Student)
                 .WithMany(s => s.ExamResults)
                 .HasForeignKey(er => er.StudentId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasOne(er => er.StudentCourse)
                 .WithMany(sc => sc.ExamResults)
                 .HasForeignKey(er => er.StudentCourseId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
+                
+            entity.Property(er => er.Score)
+                .HasPrecision(5, 2);
         });
 
         builder.Entity<Announcement>(entity =>

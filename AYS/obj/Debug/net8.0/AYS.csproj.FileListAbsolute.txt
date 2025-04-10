@@ -153,3 +153,4 @@
 /Users/umutaraz/Desktop/dotnetDemo/AYS/obj/Debug/net8.0/AYS.pdb
 /Users/umutaraz/Desktop/dotnetDemo/AYS/obj/Debug/net8.0/AYS.genruntimeconfig.cache
 /Users/umutaraz/Desktop/dotnetDemo/AYS/obj/Debug/net8.0/ref/AYS.dll
+/Users/umutaraz/Desktop/dotnetDemo/AYS/obj/Debug/net8.0/AYS.sourcelink.json

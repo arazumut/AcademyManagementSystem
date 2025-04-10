@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace AYS.Models.Entities;
+namespace AYS.Entities;
 
 public class ApplicationUser : IdentityUser
 {

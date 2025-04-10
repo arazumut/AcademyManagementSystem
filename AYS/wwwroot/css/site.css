@@ -20,3 +20,47 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+/* Akademi Yönetim Sistemi özel stilleri */
+.card {
+  transition: transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bg-primary, .bg-success, .bg-info, .bg-warning {
+  transition: all 0.3s;
+}
+
+.bg-primary:hover {
+  background-color: #0056b3 !important;
+}
+
+.bg-success:hover {
+  background-color: #28a745 !important;
+}
+
+.bg-info:hover {
+  background-color: #138496 !important;
+}
+
+.bg-warning:hover {
+  background-color: #d39e00 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #0056b3 !important;
+} 

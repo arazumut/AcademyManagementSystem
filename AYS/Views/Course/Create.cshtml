@@ -1,0 +1,149 @@
+@model AYS.Entities.Course
+
+@{
+    ViewData["Title"] = "Yeni Kurs Oluştur";
+}
+
+<div class="container mt-4">
+    <h1>Yeni Kurs Oluştur</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Kurslar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Yeni Kurs</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Kurs Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Code" class="control-label">Kurs Kodu</label>
+                                    <input asp-for="Code" class="form-control" />
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Name" class="control-label">Kurs Adı</label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Description" class="control-label">Açıklama</label>
+                            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="CategoryId" class="control-label">Kategori</label>
+                                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryId">
+                                        <option value="">-- Kategori Seçin --</option>
+                                    </select>
+                                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="SemesterId" class="control-label">Dönem</label>
+                                    <select asp-for="SemesterId" class="form-select" asp-items="ViewBag.SemesterId">
+                                        <option value="">-- Dönem Seçin --</option>
+                                    </select>
+                                    <span asp-validation-for="SemesterId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="StartDate" class="control-label">Başlangıç Tarihi</label>
+                                    <input asp-for="StartDate" class="form-control" type="date" />
+                                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="EndDate" class="control-label">Bitiş Tarihi</label>
+                                    <input asp-for="EndDate" class="form-control" type="date" />
+                                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="MaxStudents" class="control-label">Maksimum Öğrenci Sayısı</label>
+                                    <input asp-for="MaxStudents" class="form-control" min="0" />
+                                    <span asp-validation-for="MaxStudents" class="text-danger"></span>
+                                    <small class="form-text text-muted">0 değeri sınırsız anlamına gelir.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-check mt-4">
+                                    <input asp-for="IsActive" class="form-check-input" type="checkbox" checked />
+                                    <label asp-for="IsActive" class="form-check-label control-label">Aktif</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save"></i> Kaydet
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="bi bi-x"></i> İptal
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Yardım</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Yeni bir kurs oluşturmak için lütfen tüm gerekli alanları doldurun.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Kurs Kodu:</strong> Benzersiz bir kod girmelisiniz (Örn: CSE101)
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Kategori ve Dönem:</strong> Ders için bir kategori ve dönem seçmelisiniz.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Tarihler:</strong> Dersin başlangıç ve bitiş tarihleri belirtilmelidir.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

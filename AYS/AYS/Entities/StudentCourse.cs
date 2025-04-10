@@ -1,4 +1,4 @@
-namespace AYS.Models.Entities;
+namespace AYS.Entities;
 
 public class StudentCourse : BaseEntity
 {

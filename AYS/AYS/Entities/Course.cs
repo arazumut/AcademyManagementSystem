@@ -1,4 +1,4 @@
-namespace AYS.Models.Entities;
+namespace AYS.Entities;
 
 public class Course : BaseEntity
 {
@@ -7,6 +7,10 @@ public class Course : BaseEntity
     public string Description { get; set; }
     public int Credits { get; set; }
     public string? Syllabus { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
+    public int MaxStudents { get; set; }
+    public bool IsActive { get; set; }
     public string InstructorId { get; set; }
     public int CategoryId { get; set; }
     public int SemesterId { get; set; }

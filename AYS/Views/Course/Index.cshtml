@@ -1,0 +1,77 @@
+@model IEnumerable<AYS.Entities.Course>
+
+@{
+    ViewData["Title"] = "Kurslar";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Kurslar</h1>
+
+    <div class="row mb-4">
+        <div class="col">
+            @if (User.IsInRole("Admin") || User.IsInRole("Educator"))
+            {
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Yeni Kurs
+                </a>
+            }
+        </div>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            var statusClass = item.IsActive ? "bg-success" : "bg-secondary";
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center @statusClass text-white">
+                        <h5 class="mb-0">@item.Code</h5>
+                        <span class="badge bg-light text-dark rounded-pill">@item.Semester?.Name</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text"><small class="text-muted">Eğitmen: @item.Instructor?.FirstName @item.Instructor?.LastName</small></p>
+                        <p class="card-text"><small class="text-muted">Kategori: @item.Category?.Name</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-info-circle"></i> Detaylar
+                        </a>
+                        
+                        @if (User.IsInRole("Admin") || (User.IsInRole("Educator") && User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == item.InstructorId))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-pencil"></i> Düzenle
+                            </a>
+                        }
+                        
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-trash"></i> Sil
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div> 
