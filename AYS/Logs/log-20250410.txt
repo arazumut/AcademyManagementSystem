@@ -3656,3 +3656,857 @@ WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
 2025-04-10 20:40:27.525 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - null null
 2025-04-10 20:40:27.526 +03:00 [INF] The file /js/site.js was not modified
 2025-04-10 20:40:27.533 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - 304 null text/javascript 7.5787ms
+2025-04-10 20:43:23.705 +03:00 [INF] Application is shutting down...
+2025-04-10 20:43:48.767 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:43:48.806 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:43:48.809 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:43:48.811 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:43:48.818 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-04-10 20:43:48.824 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-04-10 20:43:48.955 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:43:48.979 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:43:48.981 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:43:48.985 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-10 20:43:48.991 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-10 20:43:49.032 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-10 20:43:49.033 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 20:43:49.033 +03:00 [INF] Hosting environment: Development
+2025-04-10 20:43:49.033 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-10 20:43:52.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:43:52.880 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-10 20:43:52.895 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:43:52.900 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:43:52.946 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:43:52.951 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:43:52.963 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:43:52.968 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:43:53.001 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[IsPublished] = CAST(1 AS bit) AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:43:53.011 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:43:53.016 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:43:53.074 +03:00 [INF] Executed ViewResult - view Index executed in 57.7901ms.
+2025-04-10 20:43:53.075 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 175.1817ms
+2025-04-10 20:43:53.075 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:43:53.079 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 203.0311ms
+2025-04-10 20:43:53.113 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - null null
+2025-04-10 20:43:53.122 +03:00 [INF] The file /js/site.js was not modified
+2025-04-10 20:43:53.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - 304 null text/javascript 10.2034ms
+2025-04-10 20:44:24.749 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Account/Register - null null
+2025-04-10 20:44:24.759 +03:00 [INF] Executing endpoint 'AYS.Controllers.AccountController.Register (AYS)'
+2025-04-10 20:44:24.772 +03:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(System.String) on controller AYS.Controllers.AccountController (AYS).
+2025-04-10 20:44:24.785 +03:00 [INF] Executing ViewResult, running view Register.
+2025-04-10 20:44:24.823 +03:00 [INF] Executed ViewResult - view Register executed in 39.1652ms.
+2025-04-10 20:44:24.823 +03:00 [INF] Executed action AYS.Controllers.AccountController.Register (AYS) in 50.6706ms
+2025-04-10 20:44:24.823 +03:00 [INF] Executed endpoint 'AYS.Controllers.AccountController.Register (AYS)'
+2025-04-10 20:44:24.824 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Account/Register - 200 null text/html; charset=utf-8 75.3287ms
+2025-04-10 20:45:48.197 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5100/Account/Register - application/x-www-form-urlencoded 374
+2025-04-10 20:45:48.207 +03:00 [INF] Executing endpoint 'AYS.Controllers.AccountController.Register (AYS)'
+2025-04-10 20:45:48.226 +03:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AYS.Models.ViewModels.RegisterViewModel, System.String) on controller AYS.Controllers.AccountController (AYS).
+2025-04-10 20:45:48.290 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:45:48.339 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-04-10 20:45:48.343 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-10 20:45:48.396 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTimeOffset), @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (DbType = DateTime2), @p21='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreatedAt], [DateOfBirth], [Email], [EmailConfirmed], [FirstName], [IsDeleted], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProfilePicture], [SecurityStamp], [TwoFactorEnabled], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+2025-04-10 20:45:48.405 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-04-10 20:45:48.412 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-04-10 20:45:48.415 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-04-10 20:45:48.421 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-04-10 20:45:48.424 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-10 20:45:48.445 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p23='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p24='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 256), @p14='?' (Size = 256), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (DbType = DateTime2), @p22='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [CreatedAt] = @p4, [DateOfBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [IsDeleted] = @p9, [LastName] = @p10, [LockoutEnabled] = @p11, [LockoutEnd] = @p12, [NormalizedEmail] = @p13, [NormalizedUserName] = @p14, [PasswordHash] = @p15, [PhoneNumber] = @p16, [PhoneNumberConfirmed] = @p17, [ProfilePicture] = @p18, [SecurityStamp] = @p19, [TwoFactorEnabled] = @p20, [UpdatedAt] = @p21, [UserName] = @p22
+OUTPUT 1
+WHERE [Id] = @p23 AND [ConcurrencyStamp] = @p24;
+2025-04-10 20:45:48.453 +03:00 [INF] Kullanıcı hesabı oluşturuldu ve Educator rolü atandı.
+2025-04-10 20:45:48.464 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-04-10 20:45:48.471 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-04-10 20:45:48.474 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:45:48.479 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-04-10 20:45:48.482 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-04-10 20:45:48.482 +03:00 [INF] Kullanıcı oturum açtı: arazumut340@gmail.com
+2025-04-10 20:45:48.482 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2025-04-10 20:45:48.483 +03:00 [INF] Executed action AYS.Controllers.AccountController.Register (AYS) in 255.9813ms
+2025-04-10 20:45:48.483 +03:00 [INF] Executed endpoint 'AYS.Controllers.AccountController.Register (AYS)'
+2025-04-10 20:45:48.483 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5100/Account/Register - 302 0 null 286.4321ms
+2025-04-10 20:45:48.485 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:45:48.486 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:45:48.486 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:45:48.490 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:45:48.492 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:45:48.494 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:45:48.496 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:45:48.525 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:45:48.544 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:45:48.545 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:45:48.545 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:45:48.547 +03:00 [INF] Executed ViewResult - view Index executed in 1.973ms.
+2025-04-10 20:45:48.547 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 60.8638ms
+2025-04-10 20:45:48.547 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:45:48.548 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 62.2291ms
+2025-04-10 20:45:48.576 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - null null
+2025-04-10 20:45:48.590 +03:00 [INF] The file /js/site.js was not modified
+2025-04-10 20:45:48.591 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - 304 null text/javascript 15.8477ms
+2025-04-10 20:45:57.079 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:45:57.087 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:45:57.092 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:45:57.129 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:45:57.130 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:45:57.137 +03:00 [INF] Executed ViewResult - view Index executed in 7.4444ms.
+2025-04-10 20:45:57.137 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 44.3027ms
+2025-04-10 20:45:57.137 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:45:57.137 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 58.7896ms
+2025-04-10 20:46:01.199 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:46:01.210 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:01.215 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:46:01.248 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Courses] AS [c]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:46:01.250 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:46:01.290 +03:00 [INF] Executed ViewResult - view Create executed in 41.6147ms.
+2025-04-10 20:46:01.291 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 74.7698ms
+2025-04-10 20:46:01.291 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:01.291 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 200 null text/html; charset=utf-8 91.5477ms
+2025-04-10 20:46:03.045 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:46:03.047 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:46:03.048 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:46:03.054 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:46:03.054 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:46:03.061 +03:00 [INF] Executed ViewResult - view Index executed in 7.0095ms.
+2025-04-10 20:46:03.061 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 13.5271ms
+2025-04-10 20:46:03.062 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:46:03.062 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 17.0099ms
+2025-04-10 20:46:04.697 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:46:04.700 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:04.700 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:46:04.711 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Courses] AS [c]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:46:04.711 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:46:04.715 +03:00 [INF] Executed ViewResult - view Create executed in 3.4921ms.
+2025-04-10 20:46:04.715 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 14.5662ms
+2025-04-10 20:46:04.715 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:04.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 200 null text/html; charset=utf-8 19.5782ms
+2025-04-10 20:46:05.892 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:46:05.893 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:46:05.894 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:46:05.901 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:46:05.901 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:46:05.905 +03:00 [INF] Executed ViewResult - view Index executed in 3.2254ms.
+2025-04-10 20:46:05.905 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 11.3095ms
+2025-04-10 20:46:05.911 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:46:05.912 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 20.0197ms
+2025-04-10 20:46:09.291 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:46:09.292 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:09.293 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:46:09.300 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Courses] AS [c]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:46:09.301 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:46:09.304 +03:00 [INF] Executed ViewResult - view Create executed in 3.0935ms.
+2025-04-10 20:46:09.304 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 10.9627ms
+2025-04-10 20:46:09.304 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:46:09.304 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 200 null text/html; charset=utf-8 13.0392ms
+2025-04-10 20:47:43.095 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:47:43.120 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:47:43.120 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:47:43.141 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:47:43.141 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:47:43.143 +03:00 [INF] Executed ViewResult - view Index executed in 1.6101ms.
+2025-04-10 20:47:43.143 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 22.6944ms
+2025-04-10 20:47:43.143 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:47:43.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 48.8975ms
+2025-04-10 20:47:43.173 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/css/site.css?v=7Q3fUI5SRgd-SSDCCAYziyO-7ZauPAUCbY6PqOIWMkM - null null
+2025-04-10 20:47:43.173 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - null null
+2025-04-10 20:47:43.174 +03:00 [INF] The file /js/site.js was not modified
+2025-04-10 20:47:43.174 +03:00 [INF] The file /css/site.css was not modified
+2025-04-10 20:47:43.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/css/site.css?v=7Q3fUI5SRgd-SSDCCAYziyO-7ZauPAUCbY6PqOIWMkM - 304 null text/css 1.5673ms
+2025-04-10 20:47:43.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=GjZga1YqxynfHFa_Pgr9dxSchk_swWnObcSKrHHlMW8 - 304 null text/javascript 1.5938ms
+2025-04-10 20:47:44.841 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:47:44.843 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:47:44.844 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:47:44.855 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Courses] AS [c]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:47:44.856 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:47:44.861 +03:00 [INF] Executed ViewResult - view Create executed in 5.0353ms.
+2025-04-10 20:47:44.861 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 17.3456ms
+2025-04-10 20:47:44.861 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:47:44.861 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 200 null text/html; charset=utf-8 20.7248ms
+2025-04-10 20:48:11.812 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:48:11.826 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:48:11.827 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:48:11.864 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:48:11.865 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:48:11.868 +03:00 [INF] Executed ViewResult - view Index executed in 2.8577ms.
+2025-04-10 20:48:11.868 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 40.8469ms
+2025-04-10 20:48:11.868 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:48:11.869 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 57.5861ms
+2025-04-10 20:50:02.620 +03:00 [INF] Application is shutting down...
+2025-04-10 20:50:55.705 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:50:55.734 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:50:55.737 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:50:55.738 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:50:55.747 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-04-10 20:50:55.752 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-04-10 20:50:55.875 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:50:55.898 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:50:55.901 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:50:55.904 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-10 20:50:55.912 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-10 20:50:55.950 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-10 20:50:55.951 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 20:50:55.951 +03:00 [INF] Hosting environment: Development
+2025-04-10 20:50:55.951 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-10 20:50:58.001 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:50:58.002 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-10 20:50:58.018 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:50:58.025 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:50:58.082 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:50:58.094 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:50:58.116 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:50:58.126 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:50:58.161 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:50:58.180 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:50:58.197 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:50:58.204 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:50:58.259 +03:00 [INF] Executed ViewResult - view Index executed in 56.1753ms.
+2025-04-10 20:50:58.260 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 234.9505ms
+2025-04-10 20:50:58.261 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:50:58.267 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 265.4698ms
+2025-04-10 20:50:58.324 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - null null
+2025-04-10 20:50:58.329 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/Users/umutaraz/Desktop/dotnetDemo/AYS/wwwroot/js/site.js'
+2025-04-10 20:50:58.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - 200 5020 text/javascript 6.2392ms
+2025-04-10 20:51:02.252 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:51:02.291 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:51:02.297 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:51:02.352 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:51:02.354 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:51:02.362 +03:00 [INF] Executed ViewResult - view Index executed in 8.5556ms.
+2025-04-10 20:51:02.362 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 64.5772ms
+2025-04-10 20:51:02.362 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:51:02.362 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 110.4218ms
+2025-04-10 20:51:02.473 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - null null
+2025-04-10 20:51:02.506 +03:00 [INF] The file /js/site.js was not modified
+2025-04-10 20:51:02.507 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - 304 null text/javascript 40.9772ms
+2025-04-10 20:51:03.702 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:51:03.722 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:51:03.724 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:51:03.732 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Courses] AS [c]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:51:03.733 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:51:03.787 +03:00 [INF] Executed ViewResult - view Create executed in 54.9302ms.
+2025-04-10 20:51:03.788 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 63.7789ms
+2025-04-10 20:51:03.788 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:51:03.788 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 200 null text/html; charset=utf-8 86.0129ms
+2025-04-10 20:58:00.206 +03:00 [INF] Application is shutting down...
+2025-04-10 20:58:26.390 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:58:26.421 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:58:26.423 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-10 20:58:26.424 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-10 20:58:26.432 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-04-10 20:58:26.437 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-04-10 20:58:26.557 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:58:26.580 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:58:26.582 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-04-10 20:58:26.585 +03:00 [INF] User profile is available. Using '/Users/umutaraz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-04-10 20:58:26.592 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-10 20:58:26.627 +03:00 [INF] Now listening on: http://localhost:5100
+2025-04-10 20:58:26.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-10 20:58:26.628 +03:00 [INF] Hosting environment: Development
+2025-04-10 20:58:26.628 +03:00 [INF] Content root path: /Users/umutaraz/Desktop/dotnetDemo/AYS
+2025-04-10 20:58:28.850 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:58:28.851 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-10 20:58:28.873 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:58:28.877 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:58:28.919 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:58:28.924 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:58:28.934 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:58:28.937 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:58:28.969 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:58:28.984 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:58:28.995 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:58:29.000 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:29.054 +03:00 [INF] Executed ViewResult - view Index executed in 53.5904ms.
+2025-04-10 20:58:29.058 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 180.5424ms
+2025-04-10 20:58:29.058 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:58:29.067 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 217.8861ms
+2025-04-10 20:58:29.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/css/site.css?v=7Q3fUI5SRgd-SSDCCAYziyO-7ZauPAUCbY6PqOIWMkM - null null
+2025-04-10 20:58:29.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - null null
+2025-04-10 20:58:29.111 +03:00 [INF] The file /css/site.css was not modified
+2025-04-10 20:58:29.111 +03:00 [INF] The file /js/site.js was not modified
+2025-04-10 20:58:29.112 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/css/site.css?v=7Q3fUI5SRgd-SSDCCAYziyO-7ZauPAUCbY6PqOIWMkM - 304 null text/css 10.8501ms
+2025-04-10 20:58:29.112 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/js/site.js?v=cTzfB8xFEGODazlCpmrjXjdVfpQENHCGh9_w0HQchcw - 304 null text/javascript 10.7611ms
+2025-04-10 20:58:30.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:58:30.663 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:58:30.664 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:58:30.707 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:58:30.709 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:58:30.711 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:58:30.713 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:58:30.723 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:58:30.725 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:58:30.728 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:58:30.728 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:30.731 +03:00 [INF] Executed ViewResult - view Index executed in 3.3282ms.
+2025-04-10 20:58:30.732 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 67.5923ms
+2025-04-10 20:58:30.732 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:58:30.732 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 78.0636ms
+2025-04-10 20:58:35.926 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Home/Privacy - null null
+2025-04-10 20:58:35.946 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Privacy (AYS)'
+2025-04-10 20:58:35.950 +03:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Privacy() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:58:35.952 +03:00 [INF] Executing ViewResult, running view Privacy.
+2025-04-10 20:58:35.956 +03:00 [INF] Executed ViewResult - view Privacy executed in 5.9137ms.
+2025-04-10 20:58:35.957 +03:00 [INF] Executed action AYS.Controllers.HomeController.Privacy (AYS) in 6.7ms
+2025-04-10 20:58:35.957 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Privacy (AYS)'
+2025-04-10 20:58:35.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Home/Privacy - 200 null text/html; charset=utf-8 31.7609ms
+2025-04-10 20:58:39.872 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:58:39.882 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:39.887 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:58:39.924 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:58:39.926 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:39.937 +03:00 [INF] Executed ViewResult - view Index executed in 11.2331ms.
+2025-04-10 20:58:39.937 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 49.2018ms
+2025-04-10 20:58:39.937 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:39.937 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 65.2797ms
+2025-04-10 20:58:41.657 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:58:41.667 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:58:41.678 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:58:41.738 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Courses] AS [c]
+INNER JOIN [AspNetUsers] AS [a] ON [c].[InstructorId] = [a].[Id]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:58:41.740 +03:00 [INF] Executing RedirectResult, redirecting to /Exam.
+2025-04-10 20:58:41.741 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 62.5408ms
+2025-04-10 20:58:41.741 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:58:41.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 302 0 null 84.5195ms
+2025-04-10 20:58:41.745 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:58:41.746 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:41.747 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:58:41.751 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:58:41.751 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:41.753 +03:00 [INF] Executed ViewResult - view Index executed in 1.9346ms.
+2025-04-10 20:58:41.753 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 6.4691ms
+2025-04-10 20:58:41.753 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:41.754 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 8.8927ms
+2025-04-10 20:58:45.094 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam/Create - null null
+2025-04-10 20:58:45.098 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:58:45.098 +03:00 [INF] Route matched with {action = "Create", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:58:45.109 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Courses] AS [c]
+INNER JOIN [AspNetUsers] AS [a] ON [c].[InstructorId] = [a].[Id]
+WHERE [c].[InstructorId] = @__userId_0
+2025-04-10 20:58:45.111 +03:00 [INF] Executing RedirectResult, redirecting to /Exam.
+2025-04-10 20:58:45.112 +03:00 [INF] Executed action AYS.Controllers.ExamController.Create (AYS) in 13.5997ms
+2025-04-10 20:58:45.112 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Create (AYS)'
+2025-04-10 20:58:45.113 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam/Create - 302 0 null 18.3633ms
+2025-04-10 20:58:45.115 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Exam - null null
+2025-04-10 20:58:45.116 +03:00 [INF] Executing endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:45.116 +03:00 [INF] Route matched with {action = "Index", controller = "Exam"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.ExamController (AYS).
+2025-04-10 20:58:45.121 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [Exams] AS [e]
+INNER JOIN [Courses] AS [c] ON [e].[CourseId] = [c].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [e].[InstructorId] = [a].[Id]
+WHERE [e].[InstructorId] = @__userId_0
+2025-04-10 20:58:45.122 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:45.123 +03:00 [INF] Executed ViewResult - view Index executed in 1.6893ms.
+2025-04-10 20:58:45.123 +03:00 [INF] Executed action AYS.Controllers.ExamController.Index (AYS) in 6.8426ms
+2025-04-10 20:58:45.123 +03:00 [INF] Executed endpoint 'AYS.Controllers.ExamController.Index (AYS)'
+2025-04-10 20:58:45.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Exam - 200 null text/html; charset=utf-8 8.1496ms
+2025-04-10 20:58:53.290 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Course - null null
+2025-04-10 20:58:53.291 +03:00 [INF] Executing endpoint 'AYS.Controllers.CourseController.Index (AYS)'
+2025-04-10 20:58:53.295 +03:00 [INF] Route matched with {action = "Index", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.CourseController (AYS).
+2025-04-10 20:58:53.321 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsDeleted], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ProfilePicture], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [c0].[Id], [c0].[CreatedAt], [c0].[CreatedBy], [c0].[Description], [c0].[IsDeleted], [c0].[Name], [c0].[ParentCategoryId], [c0].[UpdatedAt], [c0].[UpdatedBy], [s].[Id], [s].[CreatedAt], [s].[CreatedBy], [s].[EndDate], [s].[IsActive], [s].[IsDeleted], [s].[Name], [s].[StartDate], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM [Courses] AS [c]
+INNER JOIN [AspNetUsers] AS [a] ON [c].[InstructorId] = [a].[Id]
+INNER JOIN [Categories] AS [c0] ON [c].[CategoryId] = [c0].[Id]
+INNER JOIN [Semesters] AS [s] ON [c].[SemesterId] = [s].[Id]
+2025-04-10 20:58:53.323 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:58:53.330 +03:00 [INF] Executed ViewResult - view Index executed in 7.8337ms.
+2025-04-10 20:58:53.330 +03:00 [INF] Executed action AYS.Controllers.CourseController.Index (AYS) in 34.4057ms
+2025-04-10 20:58:53.330 +03:00 [INF] Executed endpoint 'AYS.Controllers.CourseController.Index (AYS)'
+2025-04-10 20:58:53.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Course - 200 null text/html; charset=utf-8 40.3414ms
+2025-04-10 20:58:54.601 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/Course/Create - null null
+2025-04-10 20:58:54.603 +03:00 [INF] Executing endpoint 'AYS.Controllers.CourseController.Create (AYS)'
+2025-04-10 20:58:54.604 +03:00 [INF] Route matched with {action = "Create", controller = "Course"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller AYS.Controllers.CourseController (AYS).
+2025-04-10 20:58:54.606 +03:00 [INF] Executing ViewResult, running view Create.
+2025-04-10 20:58:54.682 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[CreatedBy], [c].[Description], [c].[IsDeleted], [c].[Name], [c].[ParentCategoryId], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM [Categories] AS [c]
+2025-04-10 20:58:54.689 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreatedAt], [s].[CreatedBy], [s].[EndDate], [s].[IsActive], [s].[IsDeleted], [s].[Name], [s].[StartDate], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM [Semesters] AS [s]
+2025-04-10 20:58:54.695 +03:00 [INF] Executed ViewResult - view Create executed in 90.3875ms.
+2025-04-10 20:58:54.695 +03:00 [INF] Executed action AYS.Controllers.CourseController.Create (AYS) in 91.0179ms
+2025-04-10 20:58:54.696 +03:00 [INF] Executed endpoint 'AYS.Controllers.CourseController.Create (AYS)'
+2025-04-10 20:58:54.696 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/Course/Create - 200 null text/html; charset=utf-8 94.7736ms
+2025-04-10 20:59:03.421 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:59:03.438 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:59:03.439 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:59:03.467 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:59:03.482 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:59:03.486 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:59:03.489 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:59:03.498 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:59:03.503 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:59:03.506 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:59:03.507 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:59:03.509 +03:00 [INF] Executed ViewResult - view Index executed in 2.517ms.
+2025-04-10 20:59:03.509 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 69.6274ms
+2025-04-10 20:59:03.509 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:59:03.509 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 93.4191ms
+2025-04-10 20:59:04.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5100/ - null null
+2025-04-10 20:59:04.702 +03:00 [INF] Executing endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:59:04.702 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AYS.Controllers.HomeController (AYS).
+2025-04-10 20:59:04.707 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Courses] AS [c]
+2025-04-10 20:59:04.710 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Exams] AS [e]
+2025-04-10 20:59:04.715 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@STUDENT.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Student')
+2025-04-10 20:59:04.718 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] LIKE N'%@EDUCATOR.COM' OR EXISTS (
+    SELECT 1
+    FROM [AspNetUserRoles] AS [a0]
+    WHERE [a0].[UserId] = [a].[Id] AND [a0].[RoleId] = N'Educator')
+2025-04-10 20:59:04.722 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[Description], [t].[Duration], [t].[ExamDate], [t].[ExamType], [t].[InstructorId], [t].[IsDeleted], [t].[IsPublished], [t].[Title], [t].[TotalPoints], [t].[UpdatedAt], [t].[UpdatedBy], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [e].[Id], [e].[CourseId], [e].[CreatedAt], [e].[CreatedBy], [e].[Description], [e].[Duration], [e].[ExamDate], [e].[ExamType], [e].[InstructorId], [e].[IsDeleted], [e].[IsPublished], [e].[Title], [e].[TotalPoints], [e].[UpdatedAt], [e].[UpdatedBy]
+    FROM [Exams] AS [e]
+    WHERE [e].[InstructorId] = @__userId_0 AND [e].[ExamDate] > GETDATE()
+    ORDER BY [e].[ExamDate]
+) AS [t]
+INNER JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[ExamDate]
+2025-04-10 20:59:04.724 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[Code], [t].[CreatedAt], [t].[CreatedBy], [t].[Credits], [t].[Description], [t].[EndDate], [t].[InstructorId], [t].[IsActive], [t].[IsDeleted], [t].[MaxStudents], [t].[Name], [t].[SemesterId], [t].[StartDate], [t].[Syllabus], [t].[UpdatedAt], [t].[UpdatedBy], [s].[Id], [s].[CourseId], [s].[CreatedAt], [s].[CreatedBy], [s].[EnrollmentDate], [s].[FinalGrade], [s].[IsDeleted], [s].[Status], [s].[StudentId], [s].[UpdatedAt], [s].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_1) [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+    FROM [Courses] AS [c]
+    WHERE [c].[InstructorId] = @__userId_0
+    ORDER BY [c].[CreatedAt] DESC
+) AS [t]
+LEFT JOIN [StudentCourses] AS [s] ON [t].[Id] = [s].[CourseId]
+ORDER BY [t].[CreatedAt] DESC, [t].[Id]
+2025-04-10 20:59:04.735 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Content], [t].[CourseId], [t].[CreatedAt], [t].[CreatedBy], [t].[ExpiryDate], [t].[IsDeleted], [t].[IsPublished], [t].[Priority], [t].[PublishDate], [t].[Title], [t].[UpdatedAt], [t].[UpdatedBy], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[DateOfBirth], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsDeleted], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[ProfilePicture], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [c].[Id], [c].[CategoryId], [c].[Code], [c].[CreatedAt], [c].[CreatedBy], [c].[Credits], [c].[Description], [c].[EndDate], [c].[InstructorId], [c].[IsActive], [c].[IsDeleted], [c].[MaxStudents], [c].[Name], [c].[SemesterId], [c].[StartDate], [c].[Syllabus], [c].[UpdatedAt], [c].[UpdatedBy]
+FROM (
+    SELECT TOP(@__p_0) [a].[Id], [a].[AuthorId], [a].[Content], [a].[CourseId], [a].[CreatedAt], [a].[CreatedBy], [a].[ExpiryDate], [a].[IsDeleted], [a].[IsPublished], [a].[Priority], [a].[PublishDate], [a].[Title], [a].[UpdatedAt], [a].[UpdatedBy]
+    FROM [Announcements] AS [a]
+    ORDER BY [a].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[AuthorId] = [a0].[Id]
+LEFT JOIN [Courses] AS [c] ON [t].[CourseId] = [c].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-04-10 20:59:04.736 +03:00 [INF] Executing ViewResult, running view Index.
+2025-04-10 20:59:04.737 +03:00 [INF] Executed ViewResult - view Index executed in 1.2202ms.
+2025-04-10 20:59:04.737 +03:00 [INF] Executed action AYS.Controllers.HomeController.Index (AYS) in 34.6954ms
+2025-04-10 20:59:04.737 +03:00 [INF] Executed endpoint 'AYS.Controllers.HomeController.Index (AYS)'
+2025-04-10 20:59:04.737 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5100/ - 200 null text/html; charset=utf-8 36.8556ms
+2025-04-10 20:59:07.622 +03:00 [INF] Application is shutting down...

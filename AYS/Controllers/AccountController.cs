@@ -48,22 +48,37 @@ public class AccountController : Controller
         ViewData["ReturnUrl"] = returnUrl;
         if (ModelState.IsValid)
         {
-            // E-posta veya kullanıcı adını kullanarak giriş
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("Kullanıcı giriş yaptı.");
-                return RedirectToLocal(returnUrl);
-            }
-            if (result.IsLockedOut)
-            {
-                _logger.LogWarning("Kullanıcı hesabı kilitlendi.");
-                return RedirectToAction(nameof(Lockout));
-            }
-            else
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
             {
                 ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
                 return View(model);
+            }
+            
+            // Oturum açma girişimi
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
+            
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("Kullanıcı başarıyla giriş yaptı: {Email}", model.Email);
+                return RedirectToLocal(returnUrl);
+            }
+            else
+            {
+                _logger.LogWarning("Başarısız giriş denemesi: {Email}, Sonuç: {@Result}", model.Email, result);
+                
+                if (result.IsLockedOut)
+                {
+                    return RedirectToAction(nameof(Lockout));
+                }
+                else if (result.IsNotAllowed)
+                {
+                    ModelState.AddModelError(string.Empty, "Bu hesap henüz onaylanmamış.");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Geçersiz e-posta veya şifre.");
+                }
             }
         }
 
@@ -104,25 +119,42 @@ public class AccountController : Controller
                 EmailConfirmed = true // E-posta doğrulamasını atla (geliştirme aşamasında)
             };
             
+            // Check if role exists
+            string selectedRole = !string.IsNullOrEmpty(model.Role) ? model.Role : "Student";
+            if (!await _roleManager.RoleExistsAsync(selectedRole))
+            {
+                // Role doesn't exist, create it
+                await _roleManager.CreateAsync(new IdentityRole(selectedRole));
+                _logger.LogInformation("Rol oluşturuldu: {Role}", selectedRole);
+            }
+            
+            // Create user
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
                 // Kullanıcıya seçtiği rolü ata
-                if (!string.IsNullOrEmpty(model.Role))
+                var roleResult = await _userManager.AddToRoleAsync(user, selectedRole);
+                if (!roleResult.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, model.Role);
-                }
-                else
-                {
-                    // Varsayılan olarak Student rolü ata
-                    await _userManager.AddToRoleAsync(user, "Student");
+                    // Role assignment failed
+                    _logger.LogError("Rol atama başarısız: {UserId}, {Role}, {@Errors}", 
+                        user.Id, selectedRole, roleResult.Errors);
+                    
+                    foreach (var error in roleResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    
+                    // Delete the user since role assignment failed
+                    await _userManager.DeleteAsync(user);
+                    return View(model);
                 }
 
-                _logger.LogInformation("Kullanıcı hesabı oluşturuldu.");
+                _logger.LogInformation("Kullanıcı hesabı oluşturuldu ve {Role} rolü atandı.", selectedRole);
                 
                 // Kullanıcıyı oturum aç
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation("Kullanıcı oturum açtı.");
+                _logger.LogInformation("Kullanıcı oturum açtı: {Email}", user.Email);
                 
                 return RedirectToLocal(returnUrl);
             }

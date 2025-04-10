@@ -12,13 +12,13 @@
                     <h5 class="card-title mb-0">@ViewData["Title"]</h5>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <form id="examCreateForm" asp-action="Create">
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
                         
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <label asp-for="CourseId" class="form-label">Ders</label>
-                                <select asp-for="CourseId" asp-items="ViewBag.CourseId" class="form-select">
+                                <select asp-for="CourseId" asp-items="ViewBag.CourseId" class="form-select" aria-required="true">
                                     <option value="">-- Ders Seçin --</option>
                                 </select>
                                 <span asp-validation-for="CourseId" class="text-danger"></span>
@@ -28,7 +28,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <label asp-for="Title" class="form-label">Sınav Başlığı</label>
-                                <input asp-for="Title" class="form-control" placeholder="Örn: Vize Sınavı" />
+                                <input asp-for="Title" class="form-control" placeholder="Örn: Vize Sınavı" aria-required="true" />
                                 <span asp-validation-for="Title" class="text-danger"></span>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <label asp-for="Description" class="form-label">Açıklama</label>
-                                <textarea asp-for="Description" class="form-control" rows="3" placeholder="Sınav hakkında detaylı bilgi..."></textarea>
+                                <textarea asp-for="Description" class="form-control" rows="3" placeholder="Sınav hakkında detaylı bilgi..." aria-required="true"></textarea>
                                 <span asp-validation-for="Description" class="text-danger"></span>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label asp-for="ExamType" class="form-label">Sınav Tipi</label>
-                                <select asp-for="ExamType" class="form-select">
+                                <select asp-for="ExamType" class="form-select" aria-required="true">
                                     <option value="Vize">Vize</option>
                                     <option value="Final">Final</option>
                                     <option value="Quiz">Quiz</option>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label asp-for="TotalPoints" class="form-label">Toplam Puan</label>
-                                <input asp-for="TotalPoints" class="form-control" placeholder="100" />
+                                <input asp-for="TotalPoints" class="form-control" placeholder="100" aria-required="true" />
                                 <span asp-validation-for="TotalPoints" class="text-danger"></span>
                             </div>
                         </div>
@@ -63,12 +63,12 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label asp-for="ExamDate" class="form-label">Sınav Tarihi</label>
-                                <input asp-for="ExamDate" class="form-control" type="datetime-local" />
+                                <input asp-for="ExamDate" class="form-control" type="datetime-local" aria-required="true" />
                                 <span asp-validation-for="ExamDate" class="text-danger"></span>
                             </div>
                             <div class="col-md-6">
                                 <label asp-for="Duration" class="form-label">Süre (dakika)</label>
-                                <input asp-for="Duration" class="form-control" placeholder="60" />
+                                <input asp-for="Duration" class="form-control" placeholder="60" aria-required="true" />
                                 <span asp-validation-for="Duration" class="text-danger"></span>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <a asp-action="Index" class="btn btn-secondary">
                                 <i class="fas fa-arrow-left"></i> Geri
                             </a>
-                            <button type="submit" class="btn btn-success">
+                            <button id="examSubmitButton" type="submit" class="btn btn-success">
                                 <i class="fas fa-save"></i> Kaydet
                             </button>
                         </div>

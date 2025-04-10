@@ -17,8 +17,8 @@
                         <strong>Ders:</strong> @ViewData["CourseName"]
                     </div>
                     
-                    <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <form id="examResultCreateForm" asp-action="Create">
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
                         
                         <input type="hidden" asp-for="ExamId" />
                         
@@ -59,10 +59,10 @@
                         </div>
                         
                         <div class="d-flex justify-content-end gap-2 mt-4">
-                            <a asp-controller="Exam" asp-action="Details" asp-route-id="@Model.ExamId" class="btn btn-secondary">
+                            <a asp-action="Index" class="btn btn-secondary">
                                 <i class="fas fa-arrow-left"></i> Geri
                             </a>
-                            <button type="submit" class="btn btn-success">
+                            <button id="examResultSubmitButton" type="submit" class="btn btn-success">
                                 <i class="fas fa-save"></i> Kaydet
                             </button>
                         </div>

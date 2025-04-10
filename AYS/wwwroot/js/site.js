@@ -8,18 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
     
-    // Kartlara tıklama olayı
+    // Kartlara tıklama olayı - Form içeren kartlar hariç
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Kart içindeki bağlantılar hariç kart tıklamasını ele al
-            if (!e.target.closest('a') && !e.target.closest('button')) {
-                const link = this.querySelector('a');
-                if (link) {
-                    link.click();
+        // Kart içinde form olup olmadığını kontrol et
+        const hasForm = card.querySelector('form') !== null;
+        
+        // Form içermeyen kartlara tıklama işlevselliği ekle
+        if (!hasForm) {
+            card.addEventListener('click', function(e) {
+                // Kart içindeki bağlantılar, butonlar hariç kart tıklamasını ele al
+                if (!e.target.closest('a') && !e.target.closest('button') && !e.target.closest('form')) {
+                    const link = this.querySelector('a');
+                    if (link) {
+                        link.click();
+                    }
                 }
-            }
-        });
+            });
+        }
     });
     
     // Form yönlendirme sorunlarını önle
@@ -29,52 +35,91 @@ document.addEventListener('DOMContentLoaded', function() {
 // Form işleme ve sorunları önleme
 function setupForms() {
     // Login formu
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        // Formun yanlış yönlendirilmesini önle
-        loginForm.addEventListener('click', function(e) {
-            // Eğer tıklanan öğe bir input, label veya form içi buton ise ve formun kendisi değilse
-            if (e.target !== loginForm && (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL' || e.target.tagName === 'BUTTON')) {
-                e.stopPropagation(); // Olay yayılımını durdur
-            }
-        });
-        
-        // Çift gönderimi önle
-        loginForm.addEventListener('submit', function(e) {
-            const submitButton = document.getElementById('login-submit');
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.innerText = 'Giriş Yapılıyor...';
-                setTimeout(function() {
-                    submitButton.disabled = false;
-                    submitButton.innerText = 'Giriş Yap';
-                }, 3000);
-            }
-        });
-    }
+    setupSpecificForm('loginForm', 'login-submit', 'Giriş Yapılıyor...', 'Giriş Yap');
     
     // Kayıt formu
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
+    setupSpecificForm('registerForm', 'registerSubmit', 'Kaydolunuyor...', 'Kaydol');
+    
+    // Sınav ekleme formu
+    setupSpecificForm('examCreateForm', 'examSubmitButton', 'Kaydediliyor...', 'Kaydet');
+    
+    // Kurs ekleme formu
+    setupSpecificForm('courseCreateForm', 'courseSubmitButton', 'Kaydediliyor...', 'Kaydet');
+    
+    // Sınav sonucu ekleme formu
+    setupSpecificForm('examResultCreateForm', 'examResultSubmitButton', 'Kaydediliyor...', 'Kaydet');
+    
+    // Diğer formlar için genel form işleyicisi
+    setupAllOtherForms();
+}
+
+// Belirli bir formu ayarla
+function setupSpecificForm(formId, buttonId, loadingText, defaultText) {
+    const form = document.getElementById(formId);
+    if (form) {
         // Formun yanlış yönlendirilmesini önle
-        registerForm.addEventListener('click', function(e) {
-            // Eğer tıklanan öğe bir input, label veya form içi buton ise ve formun kendisi değilse
-            if (e.target !== registerForm && (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL' || e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT')) {
+        form.addEventListener('click', function(e) {
+            // Form içindeki tüm form elemanlarını durdur
+            const isFormElement = e.target !== form && (
+                e.target.tagName === 'INPUT' || 
+                e.target.tagName === 'TEXTAREA' || 
+                e.target.tagName === 'SELECT' || 
+                e.target.tagName === 'LABEL' || 
+                e.target.tagName === 'BUTTON' ||
+                e.target.closest('div.form-check') !== null
+            );
+            
+            if (isFormElement) {
                 e.stopPropagation(); // Olay yayılımını durdur
             }
         });
         
         // Çift gönderimi önle
-        registerForm.addEventListener('submit', function(e) {
-            const submitButton = document.getElementById('registerSubmit');
+        form.addEventListener('submit', function(e) {
+            const submitButton = document.getElementById(buttonId);
             if (submitButton) {
                 submitButton.disabled = true;
-                submitButton.innerText = 'Kaydolunuyor...';
+                submitButton.innerHTML = submitButton.innerHTML.replace(defaultText, loadingText);
                 setTimeout(function() {
                     submitButton.disabled = false;
-                    submitButton.innerText = 'Kaydol';
+                    submitButton.innerHTML = submitButton.innerHTML.replace(loadingText, defaultText);
                 }, 3000);
             }
         });
     }
+}
+
+// Diğer tüm formları ayarla (ID'si olmayan formlar için)
+function setupAllOtherForms() {
+    // Sayfadaki ID'si olmayan tüm formları bul
+    const allForms = document.querySelectorAll('form:not([id])');
+    
+    allForms.forEach(form => {
+        // Her form için olay dinleyicisi ekle
+        form.addEventListener('click', function(e) {
+            // Form içindeki tüm form elemanlarını durdur
+            if (e.target !== form && 
+                (e.target.tagName === 'INPUT' || 
+                 e.target.tagName === 'TEXTAREA' || 
+                 e.target.tagName === 'SELECT' || 
+                 e.target.tagName === 'LABEL' || 
+                 e.target.tagName === 'BUTTON')) {
+                e.stopPropagation(); // Olay yayılımını durdur
+            }
+        });
+        
+        // Bu formun submit düğmesini bul
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) {
+            // Form gönderiminde düğmeyi devre dışı bırak
+            form.addEventListener('submit', function() {
+                submitButton.disabled = true;
+                
+                // 3 saniye sonra tekrar etkinleştir
+                setTimeout(function() {
+                    submitButton.disabled = false;
+                }, 3000);
+            });
+        }
+    });
 } 

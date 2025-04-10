@@ -78,10 +78,19 @@ public class ExamController : Controller
         
         // Admin can create exams for any course, educators only for their courses
         var coursesQuery = User.IsInRole("Admin")
-            ? _context.Courses
-            : _context.Courses.Where(c => c.InstructorId == userId);
+            ? _context.Courses.Include(c => c.Instructor)
+            : _context.Courses.Include(c => c.Instructor).Where(c => c.InstructorId == userId);
             
-        ViewData["CourseId"] = new SelectList(await coursesQuery.ToListAsync(), "Id", "Name");
+        var courses = await coursesQuery.ToListAsync();
+        
+        if (courses.Count == 0)
+        {
+            // Eğer hiç ders bulunamadıysa, kullanıcıya bilgilendirme mesajı göster
+            TempData["ErrorMessage"] = "Henüz sisteme kayıtlı bir ders bulunmamaktadır. Lütfen önce bir ders ekleyin.";
+            return RedirectToAction("Index");
+        }
+        
+        ViewData["CourseId"] = new SelectList(courses, "Id", "Name");
         
         return View();
     }
@@ -117,7 +126,12 @@ public class ExamController : Controller
             return RedirectToAction(nameof(Index));
         }
         
-        ViewData["CourseId"] = new SelectList(await _context.Courses.ToListAsync(), "Id", "Name", exam.CourseId);
+        // Model geçerli değilse, dersleri tekrar yükle
+        var coursesQuery = User.IsInRole("Admin")
+            ? _context.Courses.Include(c => c.Instructor)
+            : _context.Courses.Include(c => c.Instructor).Where(c => c.InstructorId == userId);
+            
+        ViewData["CourseId"] = new SelectList(await coursesQuery.ToListAsync(), "Id", "Name", exam.CourseId);
         return View(exam);
     }
 
@@ -142,7 +156,12 @@ public class ExamController : Controller
             return Forbid();
         }
         
-        ViewData["CourseId"] = new SelectList(await _context.Courses.ToListAsync(), "Id", "Name", exam.CourseId);
+        // Kurs listesini oluştur
+        var coursesQuery = User.IsInRole("Admin")
+            ? _context.Courses.Include(c => c.Instructor)
+            : _context.Courses.Include(c => c.Instructor).Where(c => c.InstructorId == userId);
+            
+        ViewData["CourseId"] = new SelectList(await coursesQuery.ToListAsync(), "Id", "Name", exam.CourseId);
         return View(exam);
     }
 
@@ -197,7 +216,12 @@ public class ExamController : Controller
             return RedirectToAction(nameof(Index));
         }
         
-        ViewData["CourseId"] = new SelectList(await _context.Courses.ToListAsync(), "Id", "Name", exam.CourseId);
+        // Kurs listesini oluştur
+        var coursesQuery = User.IsInRole("Admin")
+            ? _context.Courses.Include(c => c.Instructor)
+            : _context.Courses.Include(c => c.Instructor).Where(c => c.InstructorId == userId);
+            
+        ViewData["CourseId"] = new SelectList(await coursesQuery.ToListAsync(), "Id", "Name", exam.CourseId);
         return View(exam);
     }
 
